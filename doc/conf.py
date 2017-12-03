@@ -41,8 +41,8 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
 #    'sphinx.ext.githubpages',
-    'sphinx_automodapi.automodapi',
-    'numpydoc'
+#    'sphinx_automodapi.automodapi',
+#    'numpydoc'
 ]
 
 numpydoc_show_class_members = False
