@@ -1,6 +1,6 @@
 stack_to_template
 =================
 
-.. currentmodule:: stackpy
+.. currentmodule:: stackypy
 
 .. autofunction:: stack_to_template

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# stacky documentation build configuration file, created by
+# stackypy documentation build configuration file, created by
 # sphinx-quickstart on Thu Nov 23 17:07:54 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -61,7 +61,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Stacky'
+project = 'Stackypy'
 copyright = '2017, CSRG/LIRAE'
 author = 'CSRG/LIRAE'
 
@@ -116,7 +116,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'stackydoc'
+htmlhelp_basename = 'stackypydoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -143,7 +143,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'stacky.tex', 'stacky Documentation',
+    (master_doc, 'stackypy.tex', 'stackypy Documentation',
      'CSRG/LIRAE', 'manual'),
 ]
 
@@ -153,7 +153,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'stacky', 'stacky Documentation',
+    (master_doc, 'stackypy', 'stackypy Documentation',
      [author], 1)
 ]
 
@@ -164,8 +164,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'stacky', 'stacky Documentation',
-     author, 'stacky', 'One line description of project.',
+    (master_doc, 'stackypy', 'stackypy Documentation',
+     author, 'stackypy', 'One line description of project.',
      'Miscellaneous'),
 ]
 

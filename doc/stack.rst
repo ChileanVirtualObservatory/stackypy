@@ -3,7 +3,4 @@ Astronomical Stacking
 
 # Todo: Put information here
 
-.. automodapi:: stackpy
-   
-
-
+.. automodapi:: stackypy

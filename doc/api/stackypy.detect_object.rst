@@ -1,6 +1,6 @@
 detect_object
 =============
 
-.. currentmodule:: stackpy
+.. currentmodule:: stackypy
 
 .. autofunction:: detect_object

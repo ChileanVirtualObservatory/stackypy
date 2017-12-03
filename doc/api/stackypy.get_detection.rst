@@ -1,6 +1,6 @@
 get_detection
 =============
 
-.. currentmodule:: stackpy
+.. currentmodule:: stackypy
 
 .. autofunction:: get_detection
