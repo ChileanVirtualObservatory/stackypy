@@ -41,7 +41,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
 #    'sphinx.ext.githubpages',
-    'sphinx_automodapi.automodapi',
+#    'sphinx_automodapi.automodapi',
     'numpydoc'
 ]
 
