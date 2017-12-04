@@ -34,7 +34,7 @@ setup(
         ],
     keywords='astronomy stacking images',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
-    install_requires=['scikit-image'],
+    install_requires=['numpy','scikit-image'],
     # extras_require={
     #     'dev': [],
     #     'test': ['pyfits','matplotlib','jupyter'],
