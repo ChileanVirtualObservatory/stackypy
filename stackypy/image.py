@@ -74,22 +74,20 @@ def stack_to_template(images,interp_order=1,blur_size=2):
 
     Objects are detected with the detect_object function.
 
-    Parameters
-    ----------
-    images: list of numpy.ndarray
-    List of astronomical data cubes
-    interp_order: int
-    Order of interpolation used when rotating and scaling the images.
-    blur_size:
-    Magnitude of the gaussian blur passed to the detect_object function.
+    Args:
+        images : list of numpy.ndarray's
+            List of astronomical data cubes
+        interp_order : int
+            Order of interpolation used when rotating and scaling the images.
+        blur_size: int
+            Magnitude of the gaussian blur passed to the detect_object function.
 
-    Returns
-    -------
-    properties : tuple or None
-    Tuple with properties of the object found at the center of the image (*centroid_x*,*centroid_y*,*angle*,*major_ratio*,*minor_ratio*).
-    None when no object was found at the center.
-    detection_mask:
-    Image labeled with the detected objects, may be used for debug.
+    Returns:
+        properties : tuple or None
+            Tuple with properties of the object found at the center of the image (*centroid_x*,*centroid_y*,*angle*,*major_ratio*,*minor_ratio*).
+            None when no object was found at the center.
+        detection_mask: numpy.ndarray
+            Image labeled with the detected objects, may be used for debug.
     """
     template = images[0].copy()
     (detection,_) = detect_object(images[0],blur_size=blur_size)

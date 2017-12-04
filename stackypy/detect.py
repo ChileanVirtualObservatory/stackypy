@@ -25,20 +25,18 @@ def detect_object(img,blur_size=2):
 
     Objects are detected applying a threshold, the one at the center is picked, approximating it as a (possibily rotated) ellipse.
 
-    Parameters
-    ----------
-    img : numpy.ndarray
-        Astronomical data cube.
-    blur_size: int
-        Size of the gaussian filter applied to the image to detect the objects.
+    Args:
+        img : numpy.ndarray
+            Astronomical data cube.
+        blur_size: int
+            Size of the gaussian filter applied to the image to detect the objects.
 
-    Returns
-    -------
-    properties : tuple or None
-        Tuple with properties of the object found at the center of the image (*centroid_x*,*centroid_y*,*angle*,*major_ratio*,*minor_ratio*).
-        None when no object was found at the center.
-    detection_mask:
-        Image labeled with the detected objects, may be used for debug.
+    Returns:
+        properties : tuple or None
+            Tuple with properties of the object found at the center of the image (*centroid_x*,*centroid_y*,*angle*,*major_ratio*,*minor_ratio*).
+            None when no object was found at the center.
+        detection_mask:
+            Image labeled with the detected objects, may be used for debug.
     """
     label_image = get_detection(img,blur_size)
     if label_image is None: return (None,label_image)

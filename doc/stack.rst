@@ -1,6 +1,8 @@
-Astronomical Stacking
+Astronomical Stacking Functions
 ======================================
 
-# Todo: Put information here
+.. currentmodule:: stackypy
 
-.. automodapi:: stackypy
+.. autofunction:: detect_object
+
+.. autofunction:: stack_to_template

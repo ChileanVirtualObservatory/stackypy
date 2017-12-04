@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to stackypy's documentation!
-==================================
+====================================
 
 .. toctree::
    :maxdepth: 2
@@ -12,10 +12,9 @@ Welcome to stackypy's documentation!
 
    stack
 
+.. Indices and tables
+.. ==================
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
