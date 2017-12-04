@@ -1,0 +1,4 @@
+sphinx-automodapi
+sphinx_rtd_theme
+numpy
+scikit-image
