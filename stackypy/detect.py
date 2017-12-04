@@ -1,4 +1,4 @@
-from skimage.filters import threshold_otsu,gaussian
+from skimage.filter import threshold_otsu,gaussian
 from skimage.segmentation import clear_border
 from skimage.measure import label,regionprops
 
