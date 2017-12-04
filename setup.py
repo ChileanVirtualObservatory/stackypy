@@ -18,7 +18,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='stackypy',
-    version='0.1.0',
+    version='0.1.1',
     description='A library to stack images of galaxies and other astronomical objects.',
     long_description=long_description,
     url='https://github.com/ChileanVirtualObservatory/stackypy',

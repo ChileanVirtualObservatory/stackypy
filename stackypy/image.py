@@ -35,7 +35,7 @@ def rotate_and_scale(img,siz_x,siz_y,angle,interp_order=1):
     return img
 
 def transform_to_meet(img,ma_axis,mi_axis,angle=0,interp_order=1,blur_size=2):
-    detection = detect_object(img,blur_size=blur_size)
+    (detection,_) = detect_object(img,blur_size=blur_size)
     if detection==None: return None
     (c_x,c_y,ang,ma_ax,mi_ax) = detection
     img,mask = center_and_extend(img,c_x,c_y)
@@ -69,8 +69,30 @@ def blit_add(target,source,loc_x=0,loc_y=0):
     return target
 
 def stack_to_template(images,interp_order=1,blur_size=2):
+    """
+    Detects the central objects on a series of images, then scales and rotates these images so that all the central objects detected overlap on the same position as the one in images[0]. Images are then averaged together to create a final one.
+
+    Objects are detected with the detect_object function.
+
+    Parameters
+    ----------
+    images: list of numpy.ndarray
+    List of astronomical data cubes
+    interp_order: int
+    Order of interpolation used when rotating and scaling the images.
+    blur_size:
+    Magnitude of the gaussian blur passed to the detect_object function.
+
+    Returns
+    -------
+    properties : tuple or None
+    Tuple with properties of the object found at the center of the image (*centroid_x*,*centroid_y*,*angle*,*major_ratio*,*minor_ratio*).
+    None when no object was found at the center.
+    detection_mask:
+    Image labeled with the detected objects, may be used for debug.
+    """
     template = images[0].copy()
-    detection = detect_object(images[0],blur_size=blur_size)
+    (detection,_) = detect_object(images[0],blur_size=blur_size)
     if detection==None:
         raise ValueError("Object could not be detected at the center of template!")
     #
@@ -79,7 +101,9 @@ def stack_to_template(images,interp_order=1,blur_size=2):
     used_images = [0]
     for i in range(1,len(images)):
         result = transform_to_meet(images[i],ma_ax,mi_ax,ang,interp_order,blur_size)
-        if result==None: continue
+        if result==None:
+            warnings.warn("Failed to detect central object on image, ignoring.")
+            continue
         used_images.append(i)
         # Get the image and the mask and blit_add it to the template
         img,mask = result

@@ -29,17 +29,19 @@ def detect_object(img,blur_size=2):
     ----------
     img : numpy.ndarray
         Astronomical data cube.
-    blur_size:
+    blur_size: int
         Size of the gaussian filter applied to the image to detect the objects.
 
     Returns
     -------
-    result : tuple or None
-        Tuple with properties of the larger object: (*centroid_x*,*centroid_y*,*angle*,*major_ratio*,*minor_ratio*).
-        None when no object was detected at the center of the image.
+    properties : tuple or None
+        Tuple with properties of the object found at the center of the image (*centroid_x*,*centroid_y*,*angle*,*major_ratio*,*minor_ratio*).
+        None when no object was found at the center.
+    detection_mask:
+        Image labeled with the detected objects, may be used for debug.
     """
     label_image = get_detection(img,blur_size)
-    if label_image is None: return None
+    if label_image is None: return (None,label_image)
     #
     # Find the properties of the center region:
     props = regionprops(label_image)
@@ -49,4 +51,4 @@ def detect_object(img,blur_size=2):
     ma_axis = props[0].major_axis_length
     mi_axis = props[0].minor_axis_length
 
-    return (cent_x,cent_y,angle,ma_axis,mi_axis)
+    return ((cent_x,cent_y,angle,ma_axis,mi_axis),label_image)
