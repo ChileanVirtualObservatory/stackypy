@@ -4,6 +4,12 @@
 Stackypy
 ----------
 
+.. image:: doc/stackpy_creature.png
+    :width: 100px
+    :align: left
+    :height: 100px
+    :alt: The Stackypy logo
+
 Python library to stack images of galaxies and other astronomical objects.
 
 On a series of images the central object is detected after applying a threshold filter, the object is then modeled as an ellipse.
