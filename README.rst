@@ -4,7 +4,7 @@
 Stackypy
 ----------
 
-.. image:: doc/stackpy_creature.png
+.. image:: doc/stackpy_creature_100.png
     :width: 100px
     :align: left
     :height: 100px
